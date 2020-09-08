@@ -14,14 +14,14 @@
     },
   
     "editor.fontFamily": "Roboto Mono",
-    "editor.fontSize": 16,
+    "editor.fontSize": 20,
     "editor.cursorBlinking": "solid",
     "editor.showUnused": false,
   
     "editor.quickSuggestions": {
-      "other": false,
-      "comments": false,
-      "strings": false
+      "other": true,
+      "comments": true,
+      "strings": true
     },
     "editor.parameterHints.enabled": true,
     "editor.wordBasedSuggestions": false,
@@ -34,7 +34,7 @@
 
     "breadcrumbs.enabled": false,
   
-    "typescript.suggestionActions.enabled": false,
+    "typescript.suggestionActions.enabled": true,
     "typescript.suggest.completeFunctionCalls": true,
   
     "problems.decorations.enabled": false,
