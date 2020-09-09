@@ -1,6 +1,8 @@
 function startGame(){
     var messagesElement = document.getElementById('messages');
-    messagesElement.innerText = 'Welcome to MultiMath! Starting one game...'; 
+    //By asdding ! at the end of the variable name we assert that it is not null since the compiler
+    //is checking if it is null.
+    messagesElement!.innerText = 'Welcome to MultiMath! Starting one game...'; 
 }
 
-document.getElementById('startGame').addEventListener('click', startGame);
+document.getElementById('startGame')!.addEventListener('click', startGame);
