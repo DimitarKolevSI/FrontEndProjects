@@ -17,6 +17,14 @@
     * let mysteryString: string | null | undefined;
     * let mysteryString = null; -> OK;
     * let mysteryString = undefined; -> OK;
+    * 
+    * Type Assertions
+    * let value:any = 5;
+    * let fixedString: string = (<number>value).toFixed(4);
+    * console.log(fixedString); //5.0000
+    * 
+    * let fixedString: string = (value as number).toFixed(4);
+    * console.log(fixedString); //5.0000
 */
 
 function startGame(){
