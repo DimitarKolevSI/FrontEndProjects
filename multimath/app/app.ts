@@ -1,6 +1,28 @@
+/**
+    * let someValue: number|string;
+    * someValue = 42; -> OK
+    * someValue="Hello world"->OK
+    * someValue=true; -> Not OK
+*/
+/**
+    * Using the --strictNotNullChecks Comliper Option
+    * let basicString:string;
+    * basicString = null; -> X
+    * basicString = undefined; -> X
+    * 
+    * let nullableString: string | null;
+    * nullableString = null; -> OK
+    * nullableString = undefined; -> X
+    * 
+    * let mysteryString: string | null | undefined;
+    * let mysteryString = null; -> OK;
+    * let mysteryString = undefined; -> OK;
+*/
+
 function startGame(){
     const playerName: string = 'Dimitar';
     logPlayer(playerName);
+
 
     var messagesElement = document.getElementById('messages');
     //By asdding ! at the end of the variable name we assert that it is not null since the compiler
