@@ -28,9 +28,8 @@
 */
 
 function startGame(){
-    const playerName: string = 'Dimitar';
+    let playerName: string = 'Dimitar';
     logPlayer(playerName);
-
 
     var messagesElement = document.getElementById('messages');
     //By asdding ! at the end of the variable name we assert that it is not null since the compiler
