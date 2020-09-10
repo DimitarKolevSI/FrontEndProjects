@@ -1,3 +1,6 @@
+/// <reference path="./player.ts" />
+
+
 /**
     * let someValue: number|string;
     * someValue = 42; -> OK
