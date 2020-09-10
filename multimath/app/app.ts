@@ -25,6 +25,22 @@
     * 
     * let fixedString: string = (value as number).toFixed(4);
     * console.log(fixedString); //5.0000
+    * 
+    * Adding type annotation to functions
+    * message? -> the parameter is optional. All optional parameters should be put at the end
+    * 
+    * function funFunc(score:number, message?: string): string{
+    *                                                                                       ^
+    *                                                                                       | |
+    *                                                                                 return type 
+    * }
+    * 
+    * Default parameter
+    * function sendGreeting(greeting:string = 'Good morning!' ):void{
+    *       console.log(greeting)
+    * }
+    * sendGreeting() //Good morning!
+    * sendGreeting('Hello!') //Hello!
 */
 
 function startGame(){
@@ -37,7 +53,7 @@ function startGame(){
     messagesElement!.innerText = 'Welcome to MultiMath! Starting one game...'; 
 }
 
-function logPlayer(name){
+function logPlayer(name:string):void{
     console.log(`New game starting for player: ${name}`);
 }
 
