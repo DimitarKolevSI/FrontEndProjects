@@ -3,8 +3,7 @@
     * someValue = 42; -> OK
     * someValue="Hello world"->OK
     * someValue=true; -> Not OK
-*/
-/**
+    * 
     * Using the --strictNotNullChecks Comliper Option
     * let basicString:string;
     * basicString = null; -> X
