@@ -71,6 +71,9 @@ function getInputValue(elementID:string):string|undefined{
 function postScore(score:number, playerName:string = 'MultiMath Player'):void{
     const scoreElement: HTMLElement|null = document.getElementById('postedScores');
     scoreElement!.innerText = `${score} - ${playerName}`;
-}
+} 
 
 document.getElementById('startGame')!.addEventListener('click', startGame);
+
+const logMessage = (message:string) =>  console.log(message);
+logMessage('Welcome to MultiMath');
