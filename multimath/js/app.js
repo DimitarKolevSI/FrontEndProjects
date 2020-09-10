@@ -6,8 +6,17 @@ var Player = (function () {
     };
     return Player;
 }());
+var Utility = (function () {
+    function Utility() {
+    }
+    Utility.getInputValue = function (elementID) {
+        var inputElement = document.getElementById(elementID);
+        return inputElement.value;
+    };
+    return Utility;
+}());
 function startGame() {
-    var playerName = getInputValue('playername');
+    var playerName = Utility.getInputValue('playername');
     logPlayer(playerName);
     postScore(100, playerName);
     postScore(-5);
@@ -15,15 +24,6 @@ function startGame() {
 function logPlayer(name) {
     if (name === void 0) { name = 'MultiMath Player'; }
     console.log("New game starting for player: " + name);
-}
-function getInputValue(elementID) {
-    var inputElement = document.getElementById(elementID);
-    if (inputElement.value === '') {
-        return undefined;
-    }
-    else {
-        return inputElement.value;
-    }
 }
 function postScore(score, playerName) {
     if (playerName === void 0) { playerName = 'MultiMath Player'; }
