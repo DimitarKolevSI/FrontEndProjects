@@ -1,5 +1,5 @@
 /// <reference path="./player.ts" />
-/// <reference path="utility.ts" />
+/// <reference path="./game.ts" />
 
 
 /**
@@ -48,43 +48,19 @@
 //By asdding ! at the end of the variable name we assert that it is not null since the compiler
     //is checking if it is null.
 
+let newGame:Game;
 
-function startGame(){
-    let playerName: string = Utility.getInputValue('playername');
-    logPlayer(playerName);
+document.getElementById('startGame')!.addEventListener('click', ()=>{
+    const player:Player = new Player();
+    player.name = Utility.getInputValue('playername');
 
-    postScore(100,playerName)
-    
-    postScore(-5);  
-}
+    const problemCount: number = Number(Utility.getInputValue('problemCount'));
+    const factor: number = Number(Utility.getInputValue('factor'));
 
-function logPlayer(name:string = 'MultiMath Player'):void{
-    console.log(`New game starting for player: ${name}`);
-}
+    newGame = new Game(player, problemCount, factor);
+    newGame.displayGame();
+});
 
-
-
-function postScore(score:number, playerName:string = 'MultiMath Player'):void{
-    let logger: (value:string) => void;
-    if (score < 0 ){
-        logger = logError;
-    }
-    else{
-        logger = logMessage;
-    }
-    const scoreElement: HTMLElement|null = document.getElementById('postedScores');
-    scoreElement!.innerText = `${score} - ${playerName}`;
-    logger(`Score: ${score}`);
-} 
-
-document.getElementById('startGame')!.addEventListener('click', startGame);
-
-const logMessage = (message:string) =>  console.log(message);
-
-function logError(err: string): void{
-    console.error(err);
-}
-
-const firstPlayer: Player = new Player();
-firstPlayer.name = 'Dimitar';
-console.log(firstPlayer.formatName());
+document.getElementById('calculate')!.addEventListener('click', ()=>{
+    newGame.calculateScore()
+});

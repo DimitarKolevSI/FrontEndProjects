@@ -15,7 +15,7 @@ class Game{
             gameForm += '<div class="form-group">';
             gameForm += '<label for="answer ' + i + ' " class = "col-sm-2 control-label">';
             gameForm += String(this.factor) + ' x ' + i + ' = </label>';
-            gameForm += '<div class="col-sm-1><input type="text" class="form-control" id="answer ' + i + ' " size="5" /></div>';
+            gameForm += '<div class="col-sm-1"><input type="text" class="form-control" id="answer ' + i + '" size="5" /> </div>';
             gameForm += '</div>';
         }
 
@@ -31,7 +31,7 @@ class Game{
         let score: number = 0;
 
         for(let i = 1;i<= this.problemCount;i++){
-            const answer: number = Number(Utility.getInputValue('answer' + i));
+            const answer: number = Number(Utility.getInputValue('answer ' + i));
             if (i*this.factor === answer){
                 score ++;
             }
