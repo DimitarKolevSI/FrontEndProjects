@@ -2,7 +2,18 @@
     "extends": "../tsconfig.base",
     "compilerOptions": {
         "removeComments": true,
-        "module": "commonjs"
+        "module": "commonjs",
+        "moduleResolution" : "node",
+        "traceResolution" : true,
+        "baseUrl" : "./modules",
+        "paths" : {
+            "my_lib" : ["./customPath"]
+        },
+        "rootDirs": [
+            "modules",
+            "src",
+            "ts/modules"
+        ]
     },
     "files": [
         "./app.ts"
