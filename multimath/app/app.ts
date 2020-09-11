@@ -1,7 +1,3 @@
-/// <reference path="./player.ts" />
-/// <reference path="./game.ts" />
-
-
 /**
     * let someValue: number|string;
     * someValue = 42; -> OK
@@ -48,14 +44,18 @@
 //By asdding ! at the end of the variable name we assert that it is not null since the compiler
     //is checking if it is null.
 
+import { Player } from './player'
+import { Game } from './game'
+import * as Helpers from './utility'
+
 let newGame:Game;
 
 document.getElementById('startGame')!.addEventListener('click', ()=>{
     const player:Player = new Player();
-    player.name = Utility.getInputValue('playername');
+    player.name = Helpers.getValue('playername');
 
-    const problemCount: number = Number(Utility.getInputValue('problemCount'));
-    const factor: number = Number(Utility.getInputValue('factor'));
+    const problemCount: number = Number(Helpers.getValue('problemCount'));
+    const factor: number = Number(Helpers.  getValue('factor'));
 
     newGame = new Game(player, problemCount, factor);
     newGame.displayGame();
