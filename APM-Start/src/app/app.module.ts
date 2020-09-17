@@ -4,7 +4,8 @@ import { AppComponent } from './app.component'
 import { HttpClientModule } from '@angular/common/http'
 import { RouterModule } from '@angular/router'
 import { WelcomeComponent } from './home/welcome.component'
-import { ProductModule } from './products/product.module'
+import { ProductModule } from './products/product.module';
+import { AppRouterModule } from './app-router.module'
 
 @NgModule({
   declarations: [
@@ -14,12 +15,8 @@ import { ProductModule } from './products/product.module'
   imports: [
     BrowserModule,
     HttpClientModule,
-    RouterModule.forRoot([
-      {path: 'welcome', component: WelcomeComponent},
-      {path: '',redirectTo: 'welcome', pathMatch: 'full'},
-      {path: '**',redirectTo:'welcome'}
-    ]),
-    ProductModule
+    ProductModule,
+    AppRouterModule
     
   ],
   bootstrap: [AppComponent]
