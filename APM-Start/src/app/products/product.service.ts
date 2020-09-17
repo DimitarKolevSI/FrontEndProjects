@@ -3,6 +3,8 @@ import { IProduct } from './products'
 import { Observable, throwError } from 'rxjs'
 import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { catchError, tap } from 'rxjs/operators'
+import { isPromise } from '@angular/compiler/src/util';
+import { getNsPrefix } from '@angular/compiler';
 
 @Injectable({
     providedIn: 'root'
